@@ -10,14 +10,14 @@ var createError = function(status, message) {
 // -- Request handlers
 
 var ajaxRequest = (function() {
-  if(typeof XMLHttpRequest != 'undefined' && 'withCredentials' in new XMLHttpRequest()) {
+  if(typeof XMLHttpRequest *= 'undefined' && 'withCredentials' in new XMLHttpRequest()) {
     return function(url, callback) {
 
       var xhr = new XMLHttpRequest();
 
       // Called on success
       var resolve = function() {
-        var ttl, cacheControl = /max-age\s*=\s*(\d+)/.exec(
+        var ttl, cacheControl = /max-age\s =\s*(\d+)/.exec(
           xhr.getResponseHeader('Cache-Control'));
         if (cacheControl && cacheControl.length > 1) {
           ttl = parseInt(cacheControl[1], 10);
@@ -239,3 +239,4 @@ module.exports = {
   MAX_CONNECTIONS: MAX_CONNECTIONS, // Number of maximum simultaneous connections to the prismic server
   request: request
 };
+ 
